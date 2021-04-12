@@ -5,15 +5,19 @@ import java.util.LinkedList;
 public class Brik {
     int xp;
     int yp;
-    boolean isWhite;
-    LinkedList<Brik> br;
+    boolean isWhite; //primitiv datatype bool til at holde styr på brik farve
+    String type; //string variable til at holde styr på brik-type
+    LinkedList<Brik> br; //"container" til at opbevare brikkerne
 
-    public Brik(int xp, int yp, boolean isWhite, LinkedList<Brik> br) {
+
+    public Brik(int xp, int yp, boolean isWhite, String t, LinkedList<Brik> br) {
         this.xp = xp;
         this.yp = yp;
         this.isWhite = isWhite;
         this.br = br;
+        type=t; //Ikke this. da den bruges andre steder
         br.add(this);
+        
     }
 
     public void move(int xp, int yp){

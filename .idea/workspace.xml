@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2b614d47-c960-4763-9f52-2335a75d77d3" name="Default Changelist" comment="piece class constructor &amp; fields">
+    <list default="true" id="2b614d47-c960-4763-9f52-2335a75d77d3" name="Default Changelist" comment="Anvendelse af LinkedList til at fjerne brikker fra boardet">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Piece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Brik.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Brik.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,6 +90,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="piece class constructor &amp; fields" />
-    <option name="LAST_COMMIT_MESSAGE" value="piece class constructor &amp; fields" />
+    <MESSAGE value="Anvendelse af LinkedList til at fjerne brikker fra boardet" />
+    <option name="LAST_COMMIT_MESSAGE" value="Anvendelse af LinkedList til at fjerne brikker fra boardet" />
   </component>
 </project>

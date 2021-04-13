@@ -41,4 +41,5 @@ public class Board {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
     }
+
 }

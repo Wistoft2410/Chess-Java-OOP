@@ -3,14 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="2b614d47-c960-4763-9f52-2335a75d77d3" name="Default Changelist" comment="Anvendelse af LinkedList til at fjerne brikker fra boardet">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/pawnB.png" beforeDir="false" afterPath="$PROJECT_DIR$/data/pawnB.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/pawnW.png" beforeDir="false" afterPath="$PROJECT_DIR$/data/pawnW.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Chess-Java-OOP/com/company/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chess-Java-OOP/com/company/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Board.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -38,6 +41,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">

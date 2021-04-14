@@ -15,9 +15,9 @@ public class Brik {
         this.yp = yp;
         this.isWhite = isWhite;
         this.br = br;
-        type=t; //Ikke this. da den bruges andre steder
+        type = t; //Ikke this. da den bruges andre steder
         br.add(this);
-        
+
     }
 
     public void move(int xp, int yp){
@@ -28,7 +28,7 @@ public class Brik {
         //for-loop der filtrer vores LinkedList gennem og sammenligner piece positionerne
         for(Brik p : br){
             if(p.xp == xp && p.yp == yp){
-              p.fjern();
+                p.fjern();
             }
         }
         this.xp=xp;

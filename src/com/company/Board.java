@@ -1,7 +1,8 @@
-package com.company;
+/*
+        package com.company;
 
-import javax.swing.*;
-import java.awt.*;
+        import javax.swing.*;
+        import java.awt.*;
 
 public class Board {
     JFrame frame;
@@ -43,3 +44,4 @@ public class Board {
     }
 
 }
+*/

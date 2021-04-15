@@ -2,6 +2,7 @@ package com.company;
 
 import java.util.LinkedList;
 
+
 public class Brik {
     int xp; // variabler til placering af brikkerne
     int yp;

@@ -28,6 +28,7 @@ public class gameController {
     }
 
 
+
      */
 
     //datastrukturen der indeholder brikkerne skal være global og dermed tilgængelig for i alle GameController scopes

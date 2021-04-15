@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2b614d47-c960-4763-9f52-2335a75d77d3" name="Default Changelist" comment="Anvendelse af LinkedList til at fjerne brikker fra boardet" />
+    <list default="true" id="2b614d47-c960-4763-9f52-2335a75d77d3" name="Default Changelist" comment="En række ændringer:&#10;&#10;- Importering af &quot;orginaltBrikBillede&quot; &#10;- Interval baseret afskåring af &quot;isoleretBrik&quot; i &quot;orginaltBrikBillede&quot;&#10;-  placering af den valgte &quot;isoleretBrik&quot; sker kun på koordinat (0;0), hvilket er røv ..." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

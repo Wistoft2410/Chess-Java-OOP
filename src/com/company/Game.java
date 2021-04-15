@@ -73,6 +73,7 @@ public class Game {
         frame.setBounds(10, 10, 512, 512);
         frame.setUndecorated(true);
 
+        //ansvarlig for displaying af board og brikker
         JPanel board = new JPanel() {
             @Override
             protected void paintComponent(Graphics g) {

@@ -127,7 +127,6 @@ public class Game {
                 }
             }
         };
-
         frame.add(board);
         frame.setDefaultCloseOperation(3);
         frame.setVisible(true);

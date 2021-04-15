@@ -3,8 +3,11 @@ package com.company;
 import java.util.LinkedList;
 
 public class Brik {
-    int xp;
+    int xp; //variabler til placering af brikker
     int yp;
+
+    int x;//variabler til bevægelse af brikker vha. gange på position variablerne (xp&yp)
+    int y;
     boolean isWhite; //primitiv datatype bool til at holde styr på brik farve
     String type; //string variable til at holde styr på brik-type
     LinkedList<Brik> br; //"container" til at opbevare brikkerne
@@ -13,6 +16,7 @@ public class Brik {
     public Brik(int xp, int yp, boolean isWhite, String t, LinkedList<Brik> br) {
         this.xp = xp;
         this.yp = yp;
+
         this.isWhite = isWhite;
         this.br = br;
         type = t; //Ikke this. da den bruges andre steder

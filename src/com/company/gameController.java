@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.LinkedList;
 
 
-public class Main {
+public class gameController {
     /*
     public static class BrikImport extends JFrame {
         private ImageIcon image1;
@@ -54,7 +54,7 @@ public class Main {
         }
 
         //test brik
-        Brik hkonge = new Brik(,0, true,"konge", bb);
+        Brik hkonge = new Brik(0,0, true,"konge", bb);
 
         JFrame frame = new JFrame();
         frame.setBounds(10, 10, 512, 512);

@@ -124,7 +124,7 @@ public class Game {
                     if (!brikBillede.isWhite) {
                         isoleretBrik += 6; //rykker 6 frem for at skære de ikke-hvide brikker ud (!brikBillede.isWhite)
                     }
-                    g.drawImage(brikker[isoleretBrik], brikBillede.xp, brikBillede.yp,this);
+                    g.drawImage(brikker[isoleretBrik], brikBillede.x, brikBillede.y,this);
                 }
             }
         };

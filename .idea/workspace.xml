@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2b614d47-c960-4763-9f52-2335a75d77d3" name="Default Changelist" comment="" />
+    <list default="true" id="2b614d47-c960-4763-9f52-2335a75d77d3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/out/production/Chess-Java-OOP/com/company/Brik.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chess-Java-OOP/com/company/Brik.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,6 +39,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />

@@ -21,8 +21,8 @@ public class Game {
 
     public Game() {
         frame = new JFrame();
-        frame.setBounds(10, 10, 512, 512);
-        frame.setUndecorated(true);
+        frame.setBounds(10, 10, 512, 540);
+        frame.setUndecorated(false);
 
         // Laver start og afslut menu knapper
         menuStart = new JButton("Start Spil");

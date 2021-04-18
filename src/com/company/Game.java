@@ -96,9 +96,8 @@ public class Game {
     }
 
     public void lavTraek(Traek traek) {
-        System.out.println(traek.til.notation());
-        braet.fjernBrik(traek.til);
-        traek.brik.flytTil(traek.til);
+        System.out.println("Move made: " + traek.til.notation());
+        braet.lavTraek(traek);
     }
 
     //public static Brik hentBrik(int x, int y){

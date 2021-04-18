@@ -13,8 +13,8 @@ public class Braet {
     public Braet() {
         //Her generer jeg skakBraettet
         for(int x = 0; x < 8; ++x) {
-            sorteBrikker.add(new Bonde(new Felt(1, x), false));
-            hvideBrikker.add(new Bonde(new Felt(6, x), true));
+            sorteBrikker.add(new Bonde(new Felt(6, x), false));
+            hvideBrikker.add(new Bonde(new Felt(1, x), true));
             for(int y = 0; y < 8; ++y) {
                 felter[x][y] = new Felt(x, y);
             }
@@ -41,6 +41,21 @@ public class Braet {
             sorteBrikker.remove(b);
             hvideBrikker.remove(b);
         }
+    }
+
+    public boolean kanLaveTraek(Traek traek) {
+        for(Felt f: traek.brik.tilladteTraek(this)) {
+            System.out.println(f.notation());
+        }
+        return traek.brik.tilladteTraek(this).contains(traek.til);
+    }
+
+    public void lavTraek(Traek traek) {
+        if(!kanLaveTraek(traek)) {
+            return;
+        }
+        fjernBrik(traek.til);
+        traek.brik.flytTil(traek.til);
     }
 
     public void display(Graphics g, ImageObserver observer) {

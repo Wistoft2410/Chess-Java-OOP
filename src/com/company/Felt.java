@@ -30,7 +30,21 @@ public class Felt {
         return (7 - række) * uiStørrelse;
     }
 
-    public boolean equals(Felt felt) {
+    public boolean lovligtFelt() {
+        return række >= 0 && række < 8 && søjle >= 0 && søjle < 8;
+    }
+
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null) {
+            return false;
+        }
+        if (getClass() != o.getClass()) {
+            return false;
+        }
+        Felt felt = (Felt) o;
         return række == felt.række && søjle == felt.søjle;
     }
 

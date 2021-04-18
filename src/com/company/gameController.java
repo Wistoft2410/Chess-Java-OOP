@@ -26,8 +26,8 @@ public class gameController {
             }
         }
 
-        Bonde.billedSort = brikker[5];
-        Bonde.billedHvid = brikker[5 + 6];
+        Bonde.billedHvid = brikker[5];
+        Bonde.billedSort = brikker[5 + 6];
 
         new Game(); // if(gg == true){sout("Hav et godt spil!") prog memes...
 

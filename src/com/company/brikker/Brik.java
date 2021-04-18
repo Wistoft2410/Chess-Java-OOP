@@ -4,6 +4,7 @@ import java.awt.Graphics;
 import java.awt.image.ImageObserver;
 import java.awt.Image;
 import com.company.*;
+import java.util.List;
 
 public abstract class Brik {
     Felt plads;
@@ -17,7 +18,7 @@ public abstract class Brik {
     }
 
     public abstract Image billed();
-    public abstract Felt[] tilladteTræk(Braet Braet);
+    public abstract List<Felt> tilladteTraek(Braet braet);
     //metode til at
     public void flytTil(Felt plads) {
         this.plads = plads;

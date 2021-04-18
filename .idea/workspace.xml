@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b614d47-c960-4763-9f52-2335a75d77d3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Chess-Java-OOP/com/company/Brik.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Chess-Java-OOP/com/company/Game.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Chess-Java-OOP/com/company/gameController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/Felt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Felt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/brikker/Brik.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/brikker/Brik.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/company/gameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/gameController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,8 +50,8 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="gameController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.company.gameController" />
+    <configuration name="GameController" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="com.company.GameController" />
       <module name="Chess-Java-OOP" />
       <extension name="coverage">
         <pattern>
@@ -72,7 +65,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.gameController" />
+        <item itemvalue="Application.GameController" />
       </list>
     </recent_temporary>
   </component>

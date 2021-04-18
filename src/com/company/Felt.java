@@ -19,7 +19,7 @@ public class Felt {
     }
 
     public String notation() {
-        return "" + (char)('a' + række) + søjle;
+        return "" + (char)('a' + søjle) + (række + 1);
     }
 
     private int x() {

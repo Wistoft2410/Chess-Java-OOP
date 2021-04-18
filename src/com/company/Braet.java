@@ -21,6 +21,28 @@ public class Braet {
         }
     }
 
+    public Brik hentBrik(Felt felt) {
+        for(Brik b: sorteBrikker) {
+            if(b.felt().equals(felt)) {
+                return b;
+            }
+        }
+        for(Brik b: hvideBrikker) {
+            if(b.felt().equals(felt)) {
+                return b;
+            }
+        }
+        return null;
+    }
+
+    public void fjernBrik(Felt felt) {
+        Brik b = hentBrik(felt);
+        if(b != null){
+            sorteBrikker.remove(b);
+            hvideBrikker.remove(b);
+        }
+    }
+
     public void display(Graphics g, ImageObserver observer) {
         // Tegner underlæggende felter
         for(Felt[] række: felter) {

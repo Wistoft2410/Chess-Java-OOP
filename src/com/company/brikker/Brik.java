@@ -23,6 +23,10 @@ public abstract class Brik {
         this.plads = plads;
     }
 
+    public Felt felt() {
+        return this.plads;
+    }
+
     public void display(Graphics g, ImageObserver observer) {
         if(!valgt) {
             plads.display(g, billed(), observer);

@@ -8,8 +8,9 @@ import java.awt.event.MouseMotionListener;
 import com.company.brikker.*;
 
 public class Game {
-    Braet Braet = new Braet();
+    Braet braet = new Braet();
     Brik valgteBrik = null;
+    Point valgteBrikPosition = null;
 
     public Game() {
         JFrame frame = new JFrame();
@@ -21,20 +22,21 @@ public class Game {
             @Override
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
-                Braet.display(g, this);
+                braet.display(g, this);
+                if(valgteBrik != null && valgteBrikPosition != null) {
+                    g.drawImage(valgteBrik.billed(), (int) valgteBrikPosition.getX(), (int) valgteBrikPosition.getY(), this);
+                }
             }
         };
         frame.add(grafik);
         frame.addMouseMotionListener(new MouseMotionListener() {
             @Override
             public void mouseDragged(MouseEvent e)  {
-                //efter brikken er valgt skal den kunne rykkes på
-                //if(valgteBrik!=null){
-                //    valgteBrik.x = e.getX()-32;
-                //    valgteBrik.y = e.getY()-32;
-                //    frame.repaint(); //det samme som frame update
-                //}
-
+                // efter brikken er valgt skal den kunne rykkes på
+                if(valgteBrik != null){
+                    valgteBrikPosition = new Point(e.getX() - 32, e.getY() - 32); 
+                    frame.repaint(); //det samme som frame update
+                }
             }
 
             @Override
@@ -52,16 +54,24 @@ public class Game {
             @Override
             public void mousePressed(MouseEvent e) {
                 //System.out.println((hentBrik(e.getX(),e.getY()).isWhite?"white ":"black ")+hentBrik(e.getX(),e.getY()).type);
-                //valgteBrik = Braet.hentBrik(new Felt(e.getPoint()));
-
+                valgteBrik = braet.hentBrik(new Felt(e.getPoint()));
+                if(valgteBrik != null) {
+                    valgteBrik.setValgt(true);
+                    valgteBrikPosition = new Point(e.getX() - 32, e.getY() - 32); 
+                }
             }
 
             @Override
             public void mouseReleased(MouseEvent e) {
                 //når mussens knap frigives skal brikken placeres, hvilket er årsagen til at vi igen dividere med 64
-                //valgteBrik.move(e.getX()/64, e.getY()/64);
-                //frame.repaint();
-
+                if(valgteBrik != null) {
+                    Felt slutfelt = new Felt(e.getPoint());
+                    valgteBrik.setValgt(false);
+                    lavTraek(new Traek(valgteBrik.felt(), slutfelt, valgteBrik, braet.hentBrik(slutfelt)));
+                }
+                valgteBrik = null;
+                valgteBrikPosition = null;
+                frame.repaint();
             }
 
             @Override
@@ -79,9 +89,16 @@ public class Game {
         frame.setVisible(true);
 
     }
+
     public static void hints(String infoMessage, String titleBar)
     {
         JOptionPane.showMessageDialog(null, infoMessage, "Fejl type: " + titleBar, JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    public void lavTraek(Traek traek) {
+        System.out.println(traek.til.notation());
+        braet.fjernBrik(traek.til);
+        traek.brik.flytTil(traek.til);
     }
 
     //public static Brik hentBrik(int x, int y){

@@ -34,6 +34,8 @@ public class gameController {
         Loeber.billedSort = brikker[2 + 6];
         Taarn.billedHvid = brikker[4];
         Taarn.billedSort = brikker[4 + 6];
+        Dronning.billedHvid = brikker[1];
+        Dronning.billedSort = brikker[1 + 6];
 
         new Game(); // if(gg == true){sout("Hav et godt spil!") prog memes...
 

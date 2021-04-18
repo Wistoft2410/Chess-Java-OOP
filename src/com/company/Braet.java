@@ -25,6 +25,7 @@ public class Braet {
         sorteBrikker.add(new Loeber(new Felt(7, 6), false));
         sorteBrikker.add(new Taarn(new Felt(7, 0), false));
         sorteBrikker.add(new Taarn(new Felt(7, 7), false));
+        sorteBrikker.add(new Dronning(new Felt(7, 4), false));
 
         hvideBrikker.add(new Springer(new Felt(0, 2), true));
         hvideBrikker.add(new Springer(new Felt(0, 5), true));
@@ -32,6 +33,7 @@ public class Braet {
         hvideBrikker.add(new Loeber(new Felt(0, 6), true));
         hvideBrikker.add(new Taarn(new Felt(0, 0), true));
         hvideBrikker.add(new Taarn(new Felt(0, 7), true));
+        hvideBrikker.add(new Dronning(new Felt(0, 3), true));
     }
 
     public Brik hentBrik(Felt felt) {

@@ -14,8 +14,10 @@ public class Taarn extends Brik {
 
     public List<Felt> tilladteTraek(Braet braet) {
         List<Felt> tilladte = new LinkedList<Felt>();
+        // Tilføjer alle traek som følger akserne
         for(int x = -1; x <= 1; x++) {
             for(int y = -1; y <= 1; y++) {
+                // Dette er for at undgå diagonale retninger i loopet
                 if(x != 0 && y != 0) {
                     continue;
                 }

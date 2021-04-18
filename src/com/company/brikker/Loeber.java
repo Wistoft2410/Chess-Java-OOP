@@ -14,6 +14,7 @@ public class Loeber extends Brik {
 
     public List<Felt> tilladteTraek(Braet braet) {
         List<Felt> tilladte = new LinkedList<Felt>();
+        // tilføjer alle traek som er diagonale retninger
         for(int x = -1; x <= 1; x+= 2) {
             for(int y = -1; y <= 1; y += 2) {
                 lavTilladteTraekForRetning(tilladte, braet, x, y);

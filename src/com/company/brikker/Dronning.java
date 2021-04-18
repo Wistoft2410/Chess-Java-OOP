@@ -14,6 +14,7 @@ public class Dronning extends Brik {
 
     public List<Felt> tilladteTraek(Braet braet) {
         List<Felt> tilladte = new LinkedList<Felt>();
+        // Dronningen kan bevæge sig i alle retninger og derfor tilføjes alle traek i hver retning
         for(int x = -1; x <= 1; x++) {
             for(int y = -1; y <= 1; y++) {
                 lavTilladteTraekForRetning(tilladte, braet, x, y);

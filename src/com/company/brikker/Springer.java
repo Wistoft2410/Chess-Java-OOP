@@ -14,10 +14,11 @@ public class Springer extends Brik {
 
     public List<Felt> tilladteTraek(Braet braet) {
         List<Felt> tilladte = new LinkedList<Felt>();
+        // Springeren bevæger sig 2 i en akse og 1 i en anden akse.
         int[] bevægelse = {-2, -1, 1, 2};
         for(int x: bevægelse) {
             for(int y: bevægelse) {
-                // En springer bevæger sig altid 2 i en akse og 1 i en anden akse.
+                // Her fjerner vi alle traek hvor at den bevæger sig 2 i hver akse eller 1 i hver akse.
                 if(Math.abs(x) == Math.abs(y)) {
                     continue;
                 }

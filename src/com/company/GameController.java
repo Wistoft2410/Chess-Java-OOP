@@ -8,7 +8,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
-public class gameController {
+public class GameController {
 
     public static void main(String[] args) throws IOException {
         //orginaltBrikBillede importeres så de enkelte brikker kan blive skåret ud
@@ -24,7 +24,7 @@ public class gameController {
                 isoleretBrik++;
             }
         }
-
+        // Sætter billederne for de forskellige brik typer
         Bonde.billedHvid = brikker[5];
         Bonde.billedSort = brikker[5 + 6];
         Springer.billedHvid = brikker[3];

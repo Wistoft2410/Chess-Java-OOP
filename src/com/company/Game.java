@@ -24,7 +24,9 @@ public class Game {
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
                 g.setFont( new Font("Times New Roman", Font.BOLD, 14));
-                braet.display(g, this);
+                braet.displayFelter(g);
+                braet.displayBrikker(g, this);
+                // Tegner valgte brik ved siden af oven på mussens position
                 if(valgteBrik != null && valgteBrikPosition != null) {
                     g.drawImage(valgteBrik.billed(), (int) valgteBrikPosition.getX(), (int) valgteBrikPosition.getY(), this);
                 }
@@ -55,21 +57,25 @@ public class Game {
 
             @Override
             public void mousePressed(MouseEvent e) {
-                //System.out.println((hentBrik(e.getX(),e.getY()).isWhite?"white ":"black ")+hentBrik(e.getX(),e.getY()).type);
+                // Finder ud af om mussen har trykket på en brik
                 valgteBrik = braet.hentBrik(new Felt(e.getPoint()));
                 if(valgteBrik != null) {
+                    // Hvis den ikke er samme farve som den som har turet, skal det ignoreres
                     if(valgteBrik.erHvid() != hvidsTur) {
                         valgteBrik = null;
                         return;
                     }
+                    // Ellers set den til at være valgt og set dens position
                     valgteBrik.setValgt(true);
                     valgteBrikPosition = new Point(e.getX() - 32, e.getY() - 32); 
+                    frame.repaint();
                 }
             }
 
             @Override
             public void mouseReleased(MouseEvent e) {
-                //når mussens knap frigives skal brikken placeres, hvilket er årsagen til at vi igen dividere med 64
+                // Når mussen knappen slippes findes feltet den er blevet slippet på.
+                // Dernæst prøves der at lave et træk svarende til det mussen har gjort.
                 if(valgteBrik != null) {
                     Felt slutfelt = new Felt(e.getPoint());
                     valgteBrik.setValgt(false);
@@ -102,19 +108,24 @@ public class Game {
     }
 
     public void lavTraek(Traek traek) {
+        // Først ses der om trækket er lovligt for brikken
         if (!traek.brik.tilladteTraek(braet).contains(traek.til)) {
             return;
         }
+        // Dernest ses der om det medføre skak for spilleren selv
         braet.lavTraek(traek);
         if(braet.iSkak(hvidsTur)) {
+            // Hvis det gør annulleres trækket
             braet.fortrydTraek(traek);
             return;
         }
+        // Ellers udføres trækket og turen gives videre
         hvidsTur = !hvidsTur;
         System.out.println("Udførte Træk: " + traek.til.notation());
         System.out.println("Spil status: " + status());
     }
 
+    // Denne hjælper med at beslutte spillets status, ved først at se om der er skak mat, dernest skak og til sidst remis.
     public SpilStatus status() {
         if(braet.skakMat(hvidsTur)) {
             if(hvidsTur) {

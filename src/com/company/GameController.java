@@ -27,10 +27,10 @@ public class GameController {
         // Sætter billederne for de forskellige brik typer
         Bonde.billedHvid = brikker[5];
         Bonde.billedSort = brikker[5 + 6];
-        Springer.billedHvid = brikker[3];
-        Springer.billedSort = brikker[3 + 6];
-        Loeber.billedHvid = brikker[2];
-        Loeber.billedSort = brikker[2 + 6];
+        Springer.billedHvid = brikker[2];
+        Springer.billedSort = brikker[2 + 6];
+        Loeber.billedHvid = brikker[3];
+        Loeber.billedSort = brikker[3 + 6];
         Taarn.billedHvid = brikker[4];
         Taarn.billedSort = brikker[4 + 6];
         Dronning.billedHvid = brikker[1];

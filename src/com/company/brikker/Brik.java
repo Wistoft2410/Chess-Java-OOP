@@ -41,6 +41,7 @@ public abstract class Brik {
             plads.display(g, billed(), observer);
         }
     }
+
     public boolean erHvid() {
         return erHvid;
     }
@@ -51,6 +52,7 @@ public abstract class Brik {
     // Konstruere traek som kan laves hvis brikken kan gå i bestemt retning.
     // Stopper hvis feltet er ude for brættet eller hvis feltet er bag en en brik 
     void lavTilladteTraekForRetning(List<Felt> tilladte, Braet braet, int xd, int yd) {
+
         int x = felt().række + xd ;
         int y = felt().søjle + yd;
         Felt felt = new Felt(x, y);

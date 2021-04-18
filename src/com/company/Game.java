@@ -1,11 +1,10 @@
 package com.company;
 
+import com.company.brikker.Brik;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-import com.company.brikker.*;
 
 public class Game {
     Braet braet = new Braet();
@@ -42,16 +41,6 @@ public class Game {
             }
         });
 
-        frame.addKeyListener(new KeyListener() {
-            public void keyPressed(KeyEvent e) {
-                if(e.getKeyChar() == 'g' && !iMenu) {
-                    startMenu();
-                }
-            }
-            public void keyReleased(KeyEvent e) {}
-            public void keyTyped(KeyEvent e) {}
-        });
-
         //ansvarlig for displaying af grafik og brikker
         spilGrafik = new JPanel() {
             @Override
@@ -68,6 +57,19 @@ public class Game {
                 }
             }
         };
+
+        spilGrafik.setFocusable(true);
+        spilGrafik.addKeyListener(new KeyListener() {
+            public void keyPressed(KeyEvent e) {
+                System.out.println("Nyt parti");
+                if(e.getKeyChar() == ' ' && !iMenu) {
+                    startMenu();
+                }
+            }
+            public void keyReleased(KeyEvent e) {}
+            public void keyTyped(KeyEvent e) {}
+        });
+
         frame.add(menuStart);
         frame.add(menuSlut);
         frame.add(spilGrafik);
@@ -165,6 +167,7 @@ public class Game {
 
     // Fjerner menuen og tilføjer spillet grafisk
     private void startSpil() {
+        hvidsTur = true;
         braet = new Braet();
         iMenu = false;
         menuStart.setVisible(false);

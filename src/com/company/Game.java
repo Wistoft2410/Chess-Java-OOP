@@ -11,6 +11,7 @@ public class Game {
     Braet braet = new Braet();
     Brik valgteBrik = null;
     Point valgteBrikPosition = null;
+    boolean hvidsTur = true;
 
     public Game() {
         JFrame frame = new JFrame();
@@ -56,6 +57,10 @@ public class Game {
                 //System.out.println((hentBrik(e.getX(),e.getY()).isWhite?"white ":"black ")+hentBrik(e.getX(),e.getY()).type);
                 valgteBrik = braet.hentBrik(new Felt(e.getPoint()));
                 if(valgteBrik != null) {
+                    if(valgteBrik.erHvid() != hvidsTur) {
+                        valgteBrik = null;
+                        return;
+                    }
                     valgteBrik.setValgt(true);
                     valgteBrikPosition = new Point(e.getX() - 32, e.getY() - 32); 
                 }
@@ -96,20 +101,44 @@ public class Game {
     }
 
     public void lavTraek(Traek traek) {
-        System.out.println("Move made: " + traek.til.notation());
+        if (!traek.brik.tilladteTraek(braet).contains(traek.til)) {
+            return;
+        }
         braet.lavTraek(traek);
+        if(braet.iSkak(hvidsTur)) {
+            braet.fortrydTraek(traek);
+            return;
+        }
+        hvidsTur = !hvidsTur;
+        System.out.println("Udførte Træk: " + traek.til.notation());
+        System.out.println("Spil status: " + status());
     }
 
-    //public static Brik hentBrik(int x, int y){
-
-    //    int xp = x/64;
-    //    int yp = y/64;
-
-    //    for(Brik b: bb){
-    //        if(b.xp == xp && b.yp == yp){
-    //            return b;
-    //        }
-    //    }
-    //    return null;
-    //}
+    public SpilStatus status() {
+        if(braet.skakMat(hvidsTur)) {
+            if(hvidsTur) {
+                return SpilStatus.HvidISkakMat;
+            }
+            else {
+                return SpilStatus.SortISkakMat;
+            }
+        }
+        if(braet.iSkak(hvidsTur)) {
+            if(hvidsTur) {
+                return SpilStatus.HvidISkak;
+            }
+            else {
+                return SpilStatus.SortISkak;
+            }
+        }
+        if(braet.iSkak(!hvidsTur)) {
+            if(!hvidsTur) {
+                return SpilStatus.HvidISkak;
+            }
+            else {
+                return SpilStatus.SortISkak;
+            }
+        }
+        return SpilStatus.Igang;
+    }
 }

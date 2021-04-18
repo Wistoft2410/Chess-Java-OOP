@@ -64,19 +64,22 @@ public class Braet {
         }
     }
 
-    public boolean kanLaveTraek(Traek traek) {
-        for(Felt f: traek.brik.tilladteTraek(this)) {
-            System.out.println(f.notation());
-        }
-        return traek.brik.tilladteTraek(this).contains(traek.til);
-    }
-
     public void lavTraek(Traek traek) {
-        if(!kanLaveTraek(traek)) {
-            return;
-        }
         fjernBrik(traek.til);
         traek.brik.flytTil(traek.til);
+    }
+
+    public void fortrydTraek(Traek traek) {
+        traek.brik.flytTil(traek.fra);
+        if(traek.tagetBrik != null) {
+            traek.tagetBrik.flytTil(traek.til);
+            if(traek.tagetBrik.erHvid()) {
+                hvideBrikker.add(traek.tagetBrik);
+            }
+            else {
+                sorteBrikker.add(traek.tagetBrik);
+            }
+        }
     }
 
     public void display(Graphics g, ImageObserver observer) {
@@ -94,4 +97,66 @@ public class Braet {
             b.display(g, observer);
         }
     }
+
+    public boolean iSkak(boolean hvid) {
+        if(hvid) {
+            for(Brik b: sorteBrikker) {
+                if(b.tilladteTraek(this).contains(hvidKonge.felt())) {
+                    return true;
+                }
+            }
+        }
+        else {
+            for(Brik b: hvideBrikker) {
+                if(b.tilladteTraek(this).contains(sortKonge.felt())) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public boolean pat(boolean hvid) {
+        if(hvid) {
+            for(Brik b: hvideBrikker) {
+                if(b.tilladteTraek(this).size() == 0) {
+                    return false;
+                }
+            }
+        }
+        else {
+            for(Brik b: sorteBrikker) {
+                if(b.tilladteTraek(this).size() == 0) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    public boolean skakMat(boolean hvid) {
+        if(!iSkak(hvid)) {
+            return false;
+        }
+        LinkedList<Brik> brikker = null;
+        if(hvid) {
+            brikker = hvideBrikker;
+        }
+        else {
+            brikker = sorteBrikker;
+        }
+        for(Brik b: brikker) {
+            for(Felt til: b.tilladteTraek(this)) {
+                Traek traek = new Traek(b.felt(), til, b, hentBrik(til));
+                lavTraek(traek);
+                if(!iSkak(hvid)) {
+                    fortrydTraek(traek);
+                    return false;
+                }
+                fortrydTraek(traek);
+            }
+        }
+        return true;
+    }
+
 }

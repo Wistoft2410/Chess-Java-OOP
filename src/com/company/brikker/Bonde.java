@@ -7,16 +7,11 @@ import java.util.LinkedList;
 
 public class Bonde extends Brik {
     public static Image billedHvid, billedSort;
-    boolean harFlyttet = false;
 
     public Bonde(Felt felt, boolean erHvid) {
         super(felt, erHvid);
     }
 
-    public void flytTil(Felt plads) {
-        super.flytTil(plads);
-        harFlyttet = true;
-    }
     public List<Felt> tilladteTraek(Braet braet) {
         List<Felt> tilladte = new LinkedList<Felt>();
         int fremad = 0;
@@ -40,7 +35,7 @@ public class Bonde extends Brik {
         if(højre.lovligtFelt() && højreBrik != null && højreBrik.erHvid() != erHvid()) {
             tilladte.add(højre);
         }
-        if(!harFlyttet) {
+        if(erHvid() && felt().række == 1 || !erHvid() && felt().række == 6) {
             Felt dobbeltFremad = new Felt(felt().række + fremad * 2, felt().søjle);
             if(braet.hentBrik(dobbeltFremad) == null) {
                 tilladte.add(dobbeltFremad);

@@ -13,7 +13,7 @@ public class gameController {
 
     public static void main(String[] args) throws IOException {
         //orginaltBrikBillede importeres så de enkelte brikker kan blive skåret ud
-        BufferedImage orginaltBrikBillede = ImageIO.read(new File("../data/brikker.png"));
+        BufferedImage orginaltBrikBillede = ImageIO.read(new File("./data/brikker.png"));
 
         Image brikker[] = new Image[12];
 

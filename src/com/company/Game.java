@@ -23,6 +23,7 @@ public class Game {
             @Override
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
+                g.setFont( new Font("Times New Roman", Font.BOLD, 14));
                 braet.display(g, this);
                 if(valgteBrik != null && valgteBrikPosition != null) {
                     g.drawImage(valgteBrik.billed(), (int) valgteBrikPosition.getX(), (int) valgteBrikPosition.getY(), this);

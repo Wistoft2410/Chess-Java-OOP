@@ -20,7 +20,7 @@ public class Braet {
                 felter[x][y] = new Felt(x, y);
             }
         }
-        sortKonge = new Konge(new Felt(7, 3), false);
+        sortKonge = new Konge(new Felt(7, 4), false);
         hvidKonge = new Konge(new Felt(0, 4), true);
         sorteBrikker.add(sortKonge);
         hvideBrikker.add(hvidKonge);
@@ -31,7 +31,7 @@ public class Braet {
         sorteBrikker.add(new Loeber(new Felt(7, 6), false));
         sorteBrikker.add(new Taarn(new Felt(7, 0), false));
         sorteBrikker.add(new Taarn(new Felt(7, 7), false));
-        sorteBrikker.add(new Dronning(new Felt(7, 4), false));
+        sorteBrikker.add(new Dronning(new Felt(7, 3), false));
 
         hvideBrikker.add(new Springer(new Felt(0, 2), true));
         hvideBrikker.add(new Springer(new Felt(0, 5), true));

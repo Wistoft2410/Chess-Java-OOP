@@ -56,6 +56,15 @@ public class Felt {
             g.setColor(new Color(235,235,208)); //lyse felter: g.setColor(new Color(119,148,85));
         }
         g.fillRect(x(), y(), uiStørrelse, uiStørrelse);
+
+        // Omvendt farve for felt navn
+        if ((række + søjle) % 2 != 0) {
+            g.setColor(new Color(139,69,19)); //mørke felter: g.setColor(new Color(235,235,208));
+        }
+        else {
+            g.setColor(new Color(235,235,208)); //lyse felter: g.setColor(new Color(119,148,85));
+        }
+        g.drawString(notation(), x() + 2, y() + 12);
     }
 
     public void display(Graphics g, Image billed, ImageObserver observer) {

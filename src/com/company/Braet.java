@@ -21,8 +21,13 @@ public class Braet {
         }
         sorteBrikker.add(new Springer(new Felt(7, 2), false));
         sorteBrikker.add(new Springer(new Felt(7, 5), false));
+        sorteBrikker.add(new Loeber(new Felt(7, 1), false));
+        sorteBrikker.add(new Loeber(new Felt(7, 6), false));
+
         hvideBrikker.add(new Springer(new Felt(0, 2), true));
         hvideBrikker.add(new Springer(new Felt(0, 5), true));
+        hvideBrikker.add(new Loeber(new Felt(0, 1), true));
+        hvideBrikker.add(new Loeber(new Felt(0, 6), true));
     }
 
     public Brik hentBrik(Felt felt) {

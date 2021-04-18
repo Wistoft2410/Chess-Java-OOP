@@ -39,4 +39,24 @@ public abstract class Brik {
     public void setValgt(boolean valgt) {
         this.valgt = valgt;
     }
+
+    void lavTilladteTraekForRetning(List<Felt> tilladte, Braet braet, int xd, int yd) {
+        int x = felt().række + xd ;
+        int y = felt().søjle + yd;
+        Felt felt = new Felt(x, y);
+        while(felt.lovligtFelt() && braet.hentBrik(felt) == null) {
+            tilladte.add(felt);
+            x += xd;
+            y += yd;
+            felt = new Felt(x, y);
+        }
+        if(felt.lovligtFelt() && modstanderEllerFrit(braet, felt)) {
+            tilladte.add(felt);
+        }
+    }
+
+    boolean modstanderEllerFrit(Braet braet, Felt felt) {
+        Brik b = braet.hentBrik(felt);
+        return b == null || b.erHvid() != erHvid();
+    }
 }

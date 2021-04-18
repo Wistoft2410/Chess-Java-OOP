@@ -7,7 +7,6 @@ import java.util.LinkedList;
 
 public class Springer extends Brik {
     public static Image billedHvid, billedSort;
-    boolean harFlyttet = false;
 
     public Springer(Felt felt, boolean erHvid) {
         super(felt, erHvid);
@@ -23,11 +22,8 @@ public class Springer extends Brik {
                     continue;
                 }
                 Felt felt = new Felt(felt().række + x, felt().søjle + y);
-                if(felt.lovligtFelt()) {
-                    Brik b = braet.hentBrik(felt);
-                    if(b == null || b.erHvid() != erHvid()) {
-                        tilladte.add(felt);
-                    }
+                if(felt.lovligtFelt() && modstanderEllerFrit(braet, felt)) {
+                    tilladte.add(felt);
                 } 
             }
         }

@@ -8,6 +8,7 @@ import com.company.brikker.*;
 public class Braet {
     Felt felter[][] = new Felt[8][8];
     LinkedList<Brik> sorteBrikker = new LinkedList<Brik>();
+    Konge hvidKonge, sortKonge;
     LinkedList<Brik> hvideBrikker = new LinkedList<Brik>();
 
     public Braet() {
@@ -19,6 +20,11 @@ public class Braet {
                 felter[x][y] = new Felt(x, y);
             }
         }
+        sortKonge = new Konge(new Felt(7, 3), false);
+        hvidKonge = new Konge(new Felt(0, 4), true);
+        sorteBrikker.add(sortKonge);
+        hvideBrikker.add(hvidKonge);
+
         sorteBrikker.add(new Springer(new Felt(7, 2), false));
         sorteBrikker.add(new Springer(new Felt(7, 5), false));
         sorteBrikker.add(new Loeber(new Felt(7, 1), false));

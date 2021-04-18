@@ -1,19 +1,18 @@
 package com.company;
 
+import com.company.brikker.*;
+
 import javax.imageio.ImageIO;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.awt.image.BufferedImage;
-import javax.imageio.ImageIO;
-import java.awt.*;
-import com.company.brikker.*;
 
 public class gameController {
 
     public static void main(String[] args) throws IOException {
         //orginaltBrikBillede importeres så de enkelte brikker kan blive skåret ud
-        BufferedImage orginaltBrikBillede = ImageIO.read(new File("./data/brikker.png"));
+        BufferedImage orginaltBrikBillede = ImageIO.read(new File("/Users/computer/Documents/GitHub/Chess-Java-OOP/data/brikker.png"));
 
         Image brikker[] = new Image[12];
 

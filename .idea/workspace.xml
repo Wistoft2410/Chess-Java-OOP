@@ -2,7 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b614d47-c960-4763-9f52-2335a75d77d3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/out/production/Chess-Java-OOP/com/company/Brik.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Chess-Java-OOP/com/company/Brik.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Chess-Java-OOP/com/company/Brik.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Chess-Java-OOP/com/company/Game.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Chess-Java-OOP/com/company/gameController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/Felt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Felt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/brikker/Brik.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/brikker/Brik.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/company/gameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/gameController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,5 +132,16 @@
     <MESSAGE value="update" />
     <MESSAGE value="placering af brikker indenfor 8x8 board og klammo fil tilføjet til .gitignore" />
     <option name="LAST_COMMIT_MESSAGE" value="placering af brikker indenfor 8x8 board og klammo fil tilføjet til .gitignore" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/company/brikker/Brik.java</url>
+          <line>58</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -1,9 +1,9 @@
 package com.company.brikker;
+import com.company.Braet;
+import com.company.Felt;
 
-import java.awt.Graphics;
+import java.awt.*;
 import java.awt.image.ImageObserver;
-import java.awt.Image;
-import com.company.*;
 import java.util.List;
 
 public abstract class Brik {

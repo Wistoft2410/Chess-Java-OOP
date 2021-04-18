@@ -1,8 +1,7 @@
 package com.company;
 
-import java.awt.image.ImageObserver;
 import java.awt.*;
-import com.company.brikker.*;
+import java.awt.image.ImageObserver;
 
 public class Felt {
     public int række, søjle;

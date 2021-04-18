@@ -2,9 +2,9 @@ package com.company;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-import java.awt.event.MouseMotionListener;
+import java.awt.event.*;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import com.company.brikker.*;
 
 public class Game {
@@ -13,26 +13,64 @@ public class Game {
     Point valgteBrikPosition = null;
     boolean hvidsTur = true;
 
+    // UI elementer
+    JFrame frame;
+    boolean iMenu = true;
+    JPanel spilGrafik; 
+    JButton menuStart;
+    JButton menuSlut;
+
     public Game() {
-        JFrame frame = new JFrame();
+        frame = new JFrame();
         frame.setBounds(10, 10, 512, 512);
         frame.setUndecorated(true);
 
+        // Laver start og afslut menu knapper
+        menuStart = new JButton("Start Spil");
+        menuSlut = new JButton("Afslut");
+        menuStart.setBounds(512 / 2 - 128/2, 200, 128, 64);
+        menuSlut.setBounds(512 / 2 - 128/2, 300, 128, 64);
+        menuStart.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){  
+                startSpil();
+            }
+        });
+        menuSlut.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e){  
+                frame.setVisible(false);
+                frame.dispose();
+            }
+        });
+
+        frame.addKeyListener(new KeyListener() {
+            public void keyPressed(KeyEvent e) {
+                if(e.getKeyChar() == 'g' && !iMenu) {
+                    startMenu();
+                }
+            }
+            public void keyReleased(KeyEvent e) {}
+            public void keyTyped(KeyEvent e) {}
+        });
+
         //ansvarlig for displaying af grafik og brikker
-        JPanel grafik = new JPanel() {
+        spilGrafik = new JPanel() {
             @Override
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
                 g.setFont( new Font("Times New Roman", Font.BOLD, 14));
-                braet.displayFelter(g);
-                braet.displayBrikker(g, this);
-                // Tegner valgte brik ved siden af oven på mussens position
-                if(valgteBrik != null && valgteBrikPosition != null) {
-                    g.drawImage(valgteBrik.billed(), (int) valgteBrikPosition.getX(), (int) valgteBrikPosition.getY(), this);
+                if(!iMenu) {
+                    braet.displayFelter(g);
+                    braet.displayBrikker(g, this);
+                    // Tegner valgte brik ved siden af oven på mussens position
+                    if(valgteBrik != null && valgteBrikPosition != null) {
+                        g.drawImage(valgteBrik.billed(), (int) valgteBrikPosition.getX(), (int) valgteBrikPosition.getY(), this);
+                    }
                 }
             }
         };
-        frame.add(grafik);
+        frame.add(menuStart);
+        frame.add(menuSlut);
+        frame.add(spilGrafik);
         frame.addMouseMotionListener(new MouseMotionListener() {
             @Override
             public void mouseDragged(MouseEvent e)  {
@@ -123,6 +161,22 @@ public class Game {
         hvidsTur = !hvidsTur;
         System.out.println("Udførte Træk: " + traek.til.notation());
         System.out.println("Spil status: " + status());
+    }
+
+    // Fjerner menuen og tilføjer spillet grafisk
+    private void startSpil() {
+        braet = new Braet();
+        iMenu = false;
+        menuStart.setVisible(false);
+        menuSlut.setVisible(false);
+        frame.repaint();
+    }
+
+    private void startMenu() {
+        iMenu = true;
+        menuStart.setVisible(true);
+        menuSlut.setVisible(true);
+        frame.repaint();
     }
 
     // Denne hjælper med at beslutte spillets status, ved først at se om der er skak mat, dernest skak og til sidst remis.

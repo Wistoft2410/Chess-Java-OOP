@@ -132,21 +132,7 @@ public class Braet {
 
     // Ser om der er pat imod spilleren.
     public boolean pat(boolean hvid) {
-        if(hvid) {
-            for(Brik b: hvideBrikker) {
-                if(b.tilladteTraek(this).size() == 0) {
-                    return false;
-                }
-            }
-        }
-        else {
-            for(Brik b: sorteBrikker) {
-                if(b.tilladteTraek(this).size() == 0) {
-                    return false;
-                }
-            }
-        }
-        return true;
+        return false;
     }
 
     // Ser om der er skak mat imod spilleren.
